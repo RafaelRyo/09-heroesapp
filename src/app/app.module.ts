@@ -3,6 +3,11 @@ import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 
+//servicios
+import { HeroesService} from './services/heroes.service';
+
+import {KeysPipe} from './pipes/keys';
+
 
 import {APP_ROUTING} from './app.routes';
 
@@ -14,13 +19,18 @@ import { HeroeComponent } from './components/heroes/heroe.component';
   declarations: [
     AppComponent,
     HeroesComponent,
-    HeroeComponent
+    HeroeComponent,
+    KeysPipe
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    HttpModule,
     APP_ROUTING
   ],
-  providers: [],
+  providers: [
+    HeroesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
